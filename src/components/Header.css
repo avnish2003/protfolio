@@ -1,0 +1,279 @@
+/* ================= BASE HEADER ================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  padding: 18px 6%;
+  background: linear-gradient(90deg, #0f172a, #111827, #0f172a);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= NAVIGATION ================= */
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #3b82f6;
+  transition: 0.3s ease;
+}
+
+.nav a:hover {
+  color: #3b82f6;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= RIGHT SECTION ================= */
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ================= AVAILABLE ================= */
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* ================= RESUME ================= */
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* ================= SOCIAL ================= */
+
+.socials {
+  display: flex;
+  gap: 14px;
+}
+
+.socials a {
+  color: #e5e7eb;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.socials a:hover {
+  color: #3b82f6;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE FIX ================= */
+/* ================================================= */
+
+/* 1200px and below */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 4%;
+  }
+
+  .nav {
+    gap: 25px;
+  }
+}
+
+/* 992px and below (Small Laptops) */
+@media (max-width: 992px) {
+
+  .nav {
+    gap: 18px;
+  }
+
+  .right-section {
+    gap: 14px;
+  }
+
+  .status {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+
+  .resume-btn {
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+}
+
+/* 768px and below (Tablet) */
+@media (max-width: 768px) {
+
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  /* Hide menu for clean tablet view */
+  .nav {
+    display: none;
+  }
+
+  .right-section {
+    gap: 10px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 4px 12px;
+    white-space: nowrap;  /* IMPORTANT - single line */
+  }
+
+  .resume-btn {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+
+  .socials a {
+    font-size: 16px;
+  }
+}
+
+/* 576px and below (Large Phones) */
+@media (max-width: 576px) {
+
+  .status {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .resume-btn {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .socials {
+    gap: 8px;
+  }
+}
+
+/* 480px and below (Mobile) */
+@media (max-width: 480px) {
+
+  .right-section {
+    gap: 8px;
+  }
+
+  .status {
+    font-size: 10px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .resume-btn {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .socials a {
+    font-size: 14px;
+  }
+}
+
+/* 360px and below (Very Small Phones) */
+@media (max-width: 360px) {
+
+  .status {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+
+  .resume-btn {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .socials a {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* center everything */
+    align-items: center;
+  }
+
+  .right-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* center buttons */
+    align-items: center;
+    gap: 12px;
+  }
+
+}

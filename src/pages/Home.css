@@ -1,0 +1,248 @@
+.hero {
+  /* height: 100vh; */
+  margin-top: 100px !important;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.hero-left {
+  margin-top: 80px;
+}
+
+.hero-left h1 {
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #111;
+  transition: 0.4s ease;
+}
+
+.hero-left h1:hover {
+  transform: translateY(-10px);
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* IMAGE TOP */
+.image-box {
+  position: absolute;
+  /* margin-top: 50px; */
+  top: 0;
+  right: 0;
+  width: 230px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+/* TEXT BOTTOM RIGHT */
+.hero-text {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 230px;
+  text-align: right;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  transition: 0.3s ease;
+}
+
+.hero-text:hover {
+  opacity: 0.7;
+}
+.typing-text {
+  display: inline-block;
+}
+
+.typing-text span {
+  display: inline-block;
+  white-space: pre-line;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .hero-left {
+    margin-top: 60px;   /* reduce top space */
+  }
+
+  .hero-left h1 {
+    font-size: 80px;
+  }
+
+  .hero-right {
+    width: 250px;
+    height: 450px;
+  }
+
+  .image-box {
+    width: 200px;
+    height: 260px;
+  }
+
+  .hero-text {
+    width: 200px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .hero {
+    margin-top: 80px !important;   /* reduce big top space */
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-left {
+    margin-top: 40px;   /* THIS fixes huge gap */
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  .hero-right {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-box {
+    position: relative;
+    width: 220px;
+    height: 280px;
+  }
+
+  .hero-text {
+    position: relative;
+    margin-top: 20px;
+    width: 90%;
+    text-align: center;
+    font-size: 16px;
+    bottom: 0;   /* remove absolute bottom push */
+  }
+}
+
+/* ========================= */
+/* TECH LOGO MOVING STRIP */
+/* ========================= */
+
+.tech-strip {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0;
+  background: #ffffff;   /* Real color, no overlay */
+}
+
+.tech-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.tech-track img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-track img:hover {
+  transform: scale(1.2);
+}
+
+/* Smooth Infinite Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.intro-text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+.hire-btn {
+  margin-top: 35px;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+
+  /* Smooth Pulse Animation */
+  animation: pulseGlow 2s infinite;
+}
+
+.hire-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 45px rgba(37, 99, 235, 0.5);
+}
+
+/* Premium Glow Pulse */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}

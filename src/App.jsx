@@ -1,12 +1,16 @@
+import Header from "./components/Header";
+import Home from "./pages/Home";
 
-import Demo from './components/demo'
+function App() {
+  return (
+    <>
+      <Header />
+      <Home/>
+      
 
-
-const App=()=>{
-    return(
-        <div>
-            <Demo/>
-        </div>
-    )
+      
+    </>
+  );
 }
+
 export default App;
