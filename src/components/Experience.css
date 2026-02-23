@@ -1,0 +1,110 @@
+/* ========================= */
+/* EXPERIENCE SECTION */
+/* ========================= */
+
+.experience-section {
+  background: #f5f5f5;
+  padding: 80px 0;
+  color: #111;
+}
+
+.experience-section h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+/* FULL WIDTH WRAPPER */
+.experience-container {
+  width: 100%;
+}
+
+/* FULL WIDTH STRIP */
+.experience-row {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
+
+/* FULL WIDTH HOVER */
+.experience-row:hover {
+  background: #eaeaea;
+}
+
+/* CENTER CONTENT */
+.experience-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.left {
+  width: 70%;
+}
+
+.left h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.location {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.left ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.left li {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+/* RIGHT SIDE */
+.right {
+  width: 25%;
+  text-align: right;
+}
+
+.right span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .experience-content {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right {
+    text-align: left;
+    margin-top: 12px;
+  }
+
+  .right span {
+    font-size: 16px;
+  }
+}

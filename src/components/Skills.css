@@ -1,0 +1,144 @@
+.skills-section {
+  background: #060d23;
+  padding-top:40px; /* removed top & bottom padding */
+  text-align: center;
+  color: white;
+}
+
+/* MAIN GRID */
+.main-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+
+.skill-card {
+  text-align: center;
+}
+
+.skill-card .icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 14px;
+}
+
+.blink-btn {
+  margin: 50px 0;
+  padding: 16px 50px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+
+  /* SAME PULSE GLOW EFFECT */
+  animation: pulseGlow 2s infinite;
+}
+
+.blink-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 45px rgba(37, 99, 235, 0.5);
+}
+
+/* Premium Glow Pulse */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+/* POPUP */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup {
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+/* POPUP GRID */
+.grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 40px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.grid-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+/* ========================= */
+/* MOBILE SINGLE LINE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .main-grid {
+    display: flex;              /* grid remove */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;          /* prevent wrapping */
+    overflow: hidden;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .skill-card {
+    flex: 1;
+  }
+
+  .skill-card .icon {
+    font-size: 32px;
+  }
+
+  .skill-card p {
+    font-size: 11px;
+  }
+
+  .blink-btn {
+  width: auto;          /* full width hata do */
+  padding: 10px 25px;   /* chhota padding */
+  font-size: 13px;      /* text small */
+  border-radius: 30px;  /* thoda compact look */
+}
+}

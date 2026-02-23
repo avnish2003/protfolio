@@ -1,0 +1,99 @@
+/* ===== Overlay ===== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px; /* 🔥 Important fix */
+  z-index: 9999;
+}
+
+/* ===== Popup Box ===== */
+.popup-box {
+  width: 100%;
+  max-width: 500px;
+  background: #111;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+
+  max-height: 90vh; /* 🔥 Prevent cut */
+  overflow-y: auto; /* 🔥 Scroll inside if needed */
+
+  animation: popupFade 0.3s ease;
+}
+
+/* ===== Animation ===== */
+@keyframes popupFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== Close Button ===== */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+/* ===== Heading ===== */
+.popup-box h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* ===== Inputs ===== */
+.popup-box input,
+.popup-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1e1e1e;
+  color: white;
+  font-size: 14px;
+}
+
+/* ===== Button ===== */
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.popup-box button:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== Scrollbar (Optional Clean Look) ===== */
+.popup-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-box::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}

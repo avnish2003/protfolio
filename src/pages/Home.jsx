@@ -1,7 +1,13 @@
 import "./Home.css";
+import Skills from "../components/Skills";
 import { TypeAnimation } from "react-type-animation";
-
+import Projects from "../components/Projects";
+import Experience from "../components/Experience";
+import Contact from "../components/Contact";
+import { useState } from "react";
+import ContactPopup from "../components/ContactPopup";
 const Home = () => {
+  const [openForm, setOpenForm] = useState(false);
   return (
     <>
       {/* HERO SECTION */}
@@ -30,7 +36,12 @@ const Home = () => {
               />
             </h1>
             <div className="hire-wrapper">
-  <button className="hire-btn">Hire Me</button>
+  <button 
+  className="hire-btn"
+  onClick={() => setOpenForm(true)}
+>
+  Hire Me Now
+</button>
 </div>
 
           </div>
@@ -53,32 +64,15 @@ const Home = () => {
 
         </div>
       </section>
+     <Skills/>
+     <Projects />
+     <Experience/>
+     <Contact/>
+     <ContactPopup 
+  isOpen={openForm}
+  onClose={() => setOpenForm(false)}
+/>
 
-      {/* TECH STRIP */}
-      <div className="tech-strip">
-        <div className="tech-track">
-
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git" />
-
-          {/* duplicate for smooth scroll */}
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git" />
-
-        </div>
-      </div>
     </>
   );
 };

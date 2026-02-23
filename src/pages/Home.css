@@ -1,6 +1,7 @@
 .hero {
   /* height: 100vh; */
   margin-top: 100px !important;
+  margin-bottom: 80px;
   display: flex;
   align-items: center;
 }
@@ -14,7 +15,7 @@
 
 /* LEFT SIDE */
 .hero-left {
-  margin-top: 80px;
+  margin-top: 200px;
 }
 
 .hero-left h1 {
@@ -42,7 +43,7 @@
 /* IMAGE TOP */
 .image-box {
   position: absolute;
-  /* margin-top: 50px; */
+  margin-top: 40px;
   top: 0;
   right: 0;
   width: 230px;
@@ -65,7 +66,7 @@
 /* TEXT BOTTOM RIGHT */
 .hero-text {
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
   right: 0;
   width: 230px;
   text-align: right;
@@ -164,46 +165,6 @@
   }
 }
 
-/* ========================= */
-/* TECH LOGO MOVING STRIP */
-/* ========================= */
-
-.tech-strip {
-  width: 100%;
-  overflow: hidden;
-  padding: 50px 0;
-  background: #ffffff;   /* Real color, no overlay */
-}
-
-.tech-track {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  width: max-content;
-  animation: scroll 25s linear infinite;
-}
-
-.tech-track img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.tech-track img:hover {
-  transform: scale(1.2);
-}
-
-/* Smooth Infinite Animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .intro-text {
   font-size: 30px;
   font-weight: 500;
@@ -213,12 +174,12 @@
 
 
 .hire-btn {
-  margin-top: 35px;
+  margin-top: 38px;
   padding: 16px 40px;
   font-size: 16px;
   font-weight: 600;
   border: none;
-  border-radius: 60px;
+  border-radius: 60px;  
   cursor: pointer;
   color: white;
   background: linear-gradient(135deg, #2563eb, #3b82f6);
