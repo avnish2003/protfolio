@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Skills.css";
 
 import {
@@ -22,90 +22,93 @@ import {
   SiElementor,
   SiHostinger,
   SiCanva,
-  SiAdobephotoshop
+  SiAdobephotoshop,
+  SiPython
 } from "react-icons/si";
 
 const Skills = () => {
 
-  const [open, setOpen] = useState(false);
+  const [open,setOpen] = useState(false);
 
-  // CLOSE POPUP ON SCROLL
-  useEffect(() => {
+  const skills = [
 
-    const handleScroll = () => {
-      if(open){
-        setOpen(false);
-      }
-    };
+    {icon:<FaReact color="#61DBFB"/>, name:"React"},
+    {icon:<FaNodeJs color="#3C873A"/>, name:"NodeJS"},
+    {icon:<SiMongodb color="#4DB33D"/>, name:"MongoDB"},
+    {icon:<FaJsSquare color="#F7DF1E"/>, name:"JavaScript"},
+    {icon:<SiTailwindcss color="#38BDF8"/>, name:"Tailwind"},
+    {icon:<SiCplusplus color="#00599C"/>, name:"C++"},
+    {icon:<FaHtml5 color="#E34F26"/>, name:"HTML"},
+    {icon:<FaCss3Alt color="#264de4"/>, name:"CSS"},
 
-    window.addEventListener("scroll", handleScroll);
+    {icon:<SiC color="#A8B9CC"/>, name:"C"},
+    {icon:<FaGithub color="#ffffff"/>, name:"GitHub"},
+    {icon:<FaWordpress color="#21759B"/>, name:"WordPress"},
+    {icon:<SiExpress color="#ffffff"/>, name:"ExpressJS"},
+    {icon:<SiLinux color="#FCC624"/>, name:"Linux"},
+    {icon:<SiReactrouter color="#CA4245"/>, name:"React Router"},
+    {icon:<SiElementor color="#92003B"/>, name:"Elementor"},
+    {icon:<SiHostinger color="#673DE6"/>, name:"Hostinger"},
+    {icon:<SiCanva color="#00C4CC"/>, name:"Canva"},
+    {icon:<SiAdobephotoshop color="#31A8FF"/>, name:"Photoshop"},
+    {icon:<SiPython color="#3776AB"/>, name:"Python"}
 
-    return () => window.removeEventListener("scroll", handleScroll);
-
-  }, [open]);
-
-  const allSkills = [
-    { icon: <FaReact />, name: "React" },
-    { icon: <FaNodeJs />, name: "NodeJS" },
-    { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <FaJsSquare />, name: "JavaScript" },
-    { icon: <SiTailwindcss />, name: "Tailwind" },
-    { icon: <SiCplusplus />, name: "C++" },
-    { icon: <FaHtml5 />, name: "HTML" },
-    { icon: <FaCss3Alt />, name: "CSS" },
-    { icon: <SiC />, name: "C" },
-    { icon: <FaGithub />, name: "GitHub" },
-    { icon: <FaWordpress />, name: "WordPress" },
-    { icon: <SiExpress />, name: "ExpressJS" },
-    { icon: <SiLinux />, name: "Linux" },
-    { icon: <SiReactrouter />, name: "React Router" },
-    { icon: <SiElementor />, name: "Elementor" },
-    { icon: <SiHostinger />, name: "Hostinger" },
-    { icon: <SiCanva />, name: "Canva" },
-    { icon: <SiAdobephotoshop />, name: "Photoshop" }
   ];
 
   return (
+
     <section className="skills-section">
 
-      <h2>Technologies I Work With</h2>
+      <h2>My Tech Stack</h2>
+
+      {/* MAIN 8 SKILLS */}
 
       <div className="main-grid">
-        {allSkills.slice(0,8).map((skill, index) => (
-          <div key={index} className="skill-card">
+
+        {skills.slice(0,8).map((skill,index)=>(
+          <div className="skill-card" key={index}>
             <div className="icon">{skill.icon}</div>
             <p>{skill.name}</p>
           </div>
         ))}
+
       </div>
 
-      <button className="blink-btn" onClick={() => setOpen(true)}>
-        See Complete Skillset
+      <button className="skill-btn" onClick={()=>setOpen(true)}>
+        View All Skills
       </button>
 
+      {/* POPUP */}
+
       {open && (
-        <div className="overlay" onClick={() => setOpen(false)}>
+
+        <div className="overlay" onClick={()=>setOpen(false)}>
 
           <div className="popup" onClick={(e)=>e.stopPropagation()}>
 
-            <span className="close" onClick={() => setOpen(false)}>✕</span>
+            <span className="close" onClick={()=>setOpen(false)}>✕</span>
 
             <h3>All Skills</h3>
 
-            <div className="grid">
-              {allSkills.map((skill, index) => (
-                <div key={index} className="grid-item">
-                  <div className="grid-icon">{skill.icon}</div>
+            <div className="popup-grid">
+
+              {skills.map((skill,index)=>(
+                <div className="popup-item" key={index}>
+                  <div className="popup-icon">{skill.icon}</div>
                   <p>{skill.name}</p>
                 </div>
               ))}
+
             </div>
 
           </div>
+
         </div>
+
       )}
 
     </section>
+
   );
 };
 

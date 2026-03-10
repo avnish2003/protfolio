@@ -1,9 +1,10 @@
 /* SECTION */
 .contact-section {
-    background: #060d23;
-
+  background: #060d23;
   color: #fff;
   padding: 80px 20px;
+
+  scroll-margin-top: 120px;
 }
 
 /* TOP AREA */

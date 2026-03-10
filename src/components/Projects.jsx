@@ -5,25 +5,33 @@ const Projects = () => {
   const projects = [
     {
       title: "3D Object Viewer",
-      desc: "Full stack MERN app to upload and view 3D models using Three.js with authentication and cloud storage.",
-      tech: ["React", "Node", "MongoDB", "Three.js"],
-      img: "https://picsum.photos/500/300?random=1",
+      desc: "Upload and view 3D models using MERN stack and Three.js.",
+      tech: ["React", "Node", "MongoDB"],
+      img: "https://picsum.photos/400/250?random=1",
       github: "#",
       live: "#"
     },
     {
       title: "Leaderboard System",
-      desc: "Interactive leaderboard UI with ranking, tabs and pagination built with React.",
+      desc: "Interactive leaderboard UI with ranking and pagination.",
       tech: ["React", "Bootstrap"],
-      img: "https://picsum.photos/500/300?random=2",
+      img: "https://picsum.photos/400/250?random=2",
       github: "#",
       live: "#"
     },
     {
       title: "AI Email Sender",
-      desc: "AI powered email generator that creates email drafts and sends them using backend APIs.",
+      desc: "Generate and send emails using AI API integration.",
       tech: ["React", "Node", "AI API"],
-      img: "https://picsum.photos/500/300?random=3",
+      img: "https://picsum.photos/400/250?random=3",
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Portfolio Website",
+      desc: "Personal developer portfolio built using React.",
+      tech: ["React", "CSS"],
+      img: "https://picsum.photos/400/250?random=4",
       github: "#",
       live: "#"
     }
@@ -49,21 +57,14 @@ const Projects = () => {
               <p className="desc">{project.desc}</p>
 
               <div className="tech">
-
                 {project.tech.map((t,i)=>(
                   <span key={i}>{t}</span>
                 ))}
-
               </div>
 
               <div className="buttons">
-
                 <a href={project.github}>GitHub</a>
-
-                <a href={project.live} className="live">
-                  Live Demo
-                </a>
-
+                <a href={project.live} className="live">Live Demo</a>
               </div>
 
             </div>
