@@ -1,75 +1,81 @@
-import { useState } from "react";
 import "./Projects.css";
 
-const allProjects = [
-  {
-    title: "Anonymous Feedback",
-    image: "https://via.placeholder.com/600x350",
-  },
-  {
-    title: "Chat Application",
-    image: "https://via.placeholder.com/600x350",
-  },
-  {
-    title: "E-Commerce Store",
-    image: "https://via.placeholder.com/600x350",
-  },
-  {
-    title: "Portfolio Website",
-    image: "https://via.placeholder.com/600x350",
-  },
-  {
-    title: "Task Manager",
-    image: "https://via.placeholder.com/600x350",
-  },
-  {
-    title: "Admin Dashboard",
-    image: "https://via.placeholder.com/600x350",
-  },
-];
-
 const Projects = () => {
-  const [open, setOpen] = useState(false);
 
-  const homeProjects = allProjects.slice(0, 4); // Only 4 on home
+  const projects = [
+    {
+      title: "3D Object Viewer",
+      desc: "Full stack MERN app to upload and view 3D models using Three.js with authentication and cloud storage.",
+      tech: ["React", "Node", "MongoDB", "Three.js"],
+      img: "https://picsum.photos/500/300?random=1",
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Leaderboard System",
+      desc: "Interactive leaderboard UI with ranking, tabs and pagination built with React.",
+      tech: ["React", "Bootstrap"],
+      img: "https://picsum.photos/500/300?random=2",
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "AI Email Sender",
+      desc: "AI powered email generator that creates email drafts and sends them using backend APIs.",
+      tech: ["React", "Node", "AI API"],
+      img: "https://picsum.photos/500/300?random=3",
+      github: "#",
+      live: "#"
+    }
+  ];
 
   return (
-    <section id="projects" className="projects-section">
+    <section className="projects-section">
+
       <h2>My Projects</h2>
 
       <div className="projects-grid">
-        {homeProjects.map((project, index) => (
-          <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} />
-            <h3>{project.title}</h3>
+
+        {projects.map((project, index) => (
+
+          <div className="project-card" key={index}>
+
+            <img src={project.img} alt={project.title} />
+
+            <div className="project-content">
+
+              <h3>{project.title}</h3>
+
+              <p className="desc">{project.desc}</p>
+
+              <div className="tech">
+
+                {project.tech.map((t,i)=>(
+                  <span key={i}>{t}</span>
+                ))}
+
+              </div>
+
+              <div className="buttons">
+
+                <a href={project.github}>GitHub</a>
+
+                <a href={project.live} className="live">
+                  Live Demo
+                </a>
+
+              </div>
+
+            </div>
+
           </div>
+
         ))}
+
       </div>
 
-      <button className="hire-btn" onClick={() => setOpen(true)}>
-        View All Projects
-      </button>
+      <button className="view-btn">View All Projects</button>
 
-      {open && (
-        <div className="overlay" onClick={() => setOpen(false)}>
-          <div
-            className="projects-popup"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span className="close" onClick={() => setOpen(false)}>✕</span>
-            <h3>All Projects</h3>
-
-            <div className="popup-grid">
-              {allProjects.map((project, index) => (
-                <div key={index} className="project-card">
-                  <img src={project.image} alt={project.title} />
-                  <h3>{project.title}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
