@@ -6,6 +6,7 @@ import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import { useState } from "react";
 import ContactPopup from "../components/ContactPopup";
+import profileimage from "../assets/ChatGPT Image Mar 22, 2026, 12_55_32 PM.png";
 const Home = () => {
   const [openForm, setOpenForm] = useState(false);
   return (
@@ -49,7 +50,7 @@ const Home = () => {
           <div className="hero-right">
             <div className="image-box">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s"
+                src={profileimage}
                 alt="profile"
               />
             </div>
