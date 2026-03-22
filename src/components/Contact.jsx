@@ -1,5 +1,5 @@
 import "./Contact.css";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import ContactPopup from "../components/ContactPopup";
 
@@ -28,13 +28,27 @@ const Contact = () => {
           <p><strong>Email:</strong> shriavnish333@gmail.com</p>
 
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/avnish-h-79059a2b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer">
+
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/in/avnish-h-79059a2b7" target="_blank" rel="noreferrer">
               <FaLinkedin /> LinkedIn
             </a>
 
+            {/* GitHub */}
             <a href="https://github.com/avnish2003" target="_blank" rel="noreferrer">
               <FaGithub /> GitHub
             </a>
+
+            {/* Email (NEW) */}
+            <a href="mailto:shriavnish333@gmail.com">
+              <FaEnvelope /> Email
+            </a>
+
+            {/* WhatsApp (NEW) */}
+            <a href="https://wa.me/918837875645" target="_blank" rel="noreferrer">
+              <FaWhatsapp /> WhatsApp
+            </a>
+
           </div>
         </div>
 

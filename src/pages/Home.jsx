@@ -26,14 +26,14 @@ const Home = () => {
                 sequence={[
                   "Web Designer",
                   2000,
-                  "Web Developer",
+                  "Mern Stack Developer",
                   2000,
                   "Full Stack Developer",
                   2000,
                 ]}
                 speed={50}
                 repeat={Infinity}
-                cursor={true}
+                cursor={false}
               />
             </h1>
             <div className="hire-wrapper">
@@ -57,8 +57,7 @@ const Home = () => {
 
             <div className="hero-text">
               <p>
-                Hi, I'm Avnish, a UI/UX Designer creating intuitive digital
-                experiences.
+                Hi, I'm Avnish, a MERN Stack Developer building scalable and user-friendly web applications.
               </p>
             </div>
           </div>
