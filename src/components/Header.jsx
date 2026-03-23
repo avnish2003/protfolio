@@ -1,6 +1,6 @@
 import "./Header.css";
 import { FaDownload, FaLinkedin, FaGithub } from "react-icons/fa";
-import resumePDF from "../assets/AvnishCV (10) - Copy.pdf";
+import resumePDF from "../assets/avnishCV..pdf";
 import { useState } from "react";
 import ContactPopup from "../components/ContactPopup";
 

@@ -1,5 +1,9 @@
 import "./Projects.css";
 import { useState } from "react";
+import img1 from "../assets/Screenshot 2026-03-23 162306.png";
+import img2 from "../assets/Screenshot 2026-03-23 162400.png";
+import img3 from "../assets/Screenshot 2026-03-23 162439.png";
+import img4 from "../assets/Screenshot 2026-03-23 162420.png";
 
 const Projects = () => {
 
@@ -8,39 +12,39 @@ const [open,setOpen] = useState(false);
 const projects = [
 
 {
-title:"3D Object Viewer",
-desc:"Upload and view 3D models using MERN stack and Three.js.",
-tech:["React","Node","MongoDB"],
-img:"https://picsum.photos/400/250?random=1",
-github:"#",
-live:"#"
+title:"SmartTicket System",
+desc:"“Developed a full-stack ticketing system using MERN stack for managing user issues, tracking status, and resolving support requests.”",
+tech:["TypeScript","Node","MongoDB"],
+img:img1,
+github:"https://github.com/avnish2003/dubai-ticket-app.git",
+live:"https://zippy-taiyaki-d21c63.netlify.app/"
 },
 
 {
-title:"Leaderboard System",
-desc:"Interactive leaderboard UI with ranking and pagination.",
-tech:["React","Bootstrap"],
-img:"https://picsum.photos/400/250?random=2",
-github:"#",
-live:"#"
+title:"E-Commerce",
+desc:"“Built a  eCommerce platform using Web Tech stack with product listings, user authentication, and seamless checkout functionality.”",
+tech:["JavaScript","Html","CSS"],
+img:img2,
+github:"https://github.com/avnish2003/avnishdev.git",
+live:"https://moonlit-pavlova-49084f.netlify.app/"
 },
 
 {
-title:"AI Email Sender",
-desc:"Generate and send emails using AI API integration.",
-tech:["React","Node","AI API"],
-img:"https://picsum.photos/400/250?random=3",
-github:"#",
-live:"#"
+title:"Studio Website",
+desc:"“Developed a responsive website using HTML, CSS, and JavaScript for showcasing video production services with modern UI and smooth user experience.”",
+tech:["JavaScript","Html","CSS"],
+img:img3,
+github:"https://github.com/avnish2003/project.git",
+live:"https://heartfelt-blini-1671f2.netlify.app/"
 },
 
 {
 title:"Portfolio Website",
-desc:"Personal developer portfolio built using React.",
+desc:"“Developed a responsive portfolio website using React and CSS for showcasing projects, skills, and contact information with modern UI and smooth user experience.”",
 tech:["React","CSS"],
-img:"https://picsum.photos/400/250?random=4",
-github:"#",
-live:"#"
+img:img4,
+github:"https://github.com/avnish2003/protfolio.git",
+live:"http://avnishdev.netlify.app/"
 },
 
 {
